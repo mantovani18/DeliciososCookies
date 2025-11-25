@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Doces e cookies artesanais feitos com amor e carinho. Peça online via WhatsApp ou iFood.">
+  <title>Doces & Cookies Artesanais - Feitos com Amor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Navegação principal">
+        <div class="brand-wrapper">
+          <img class="logo" src="img/Logo.png" alt="Logo Doces & Cookies" role="img" aria-label="Logo Doces">
+          <div class="brand-text">
+            <h1 class="brand-name">Deliciosos Cookies</h1>
+            <p class="brand-tagline">Feitos com Amor & Carinho</p>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <button id="orderBtn" class="btn btn-order" type="button">
+            <span class="btn-icon">📱</span>
+            <span>Fazer Pedido</span>
+          </button>
+        </div>
+      </nav>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h2 id="hero-title" class="hero-title">Sabores artesanais feitos com carinho</h2>
+          <p class="hero-description">Cookies preparados diariamente com ingredientes selecionados. Escolha seus favoritos e faça seu pedido.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-secondary" href="#produtos">Ver Cardápio</a>
+            <a class="btn btn-secondary" href="https://wa.me/554391172507" target="_blank" rel="noopener noreferrer">Contato</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="search-wrapper">
+        <div class="search-box">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+          <input
+            id="searchInput"
+            class="search-input"
+            type="search"
+            placeholder="Buscar produtos..."
+            aria-label="Buscar produtos"
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <section id="produtos" class="products-section">
+        <div class="section-header">
+          <h2 class="section-title">Nosso Cardápio</h2>
+          <p class="section-subtitle">Selecione os produtos que deseja e envie seu pedido</p>
+        </div>
+
+        <div id="productsGrid" class="products-grid">
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p>Nenhum produto encontrado</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+          <p class="footer-text">
+          Tire suas dúvidas pelo
+          <a class="footer-link" href="https://wa.me/554391172507" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </p>
+        <p class="footer-copyright">&copy; 2024 Deliciosos Cookies. Feito com 💖</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cartBadge" class="cart-badge" style="display: none;">
+    <span id="cartCount">0</span>
+  </div>
+
+  <div class="mobile-bottom-bar">
+    <button id="orderBtnMobile" class="mobile-btn mobile-btn-order" type="button">
+      <span class="mobile-btn-icon">📱</span>
+      <span class="mobile-btn-text">Fazer Pedido</span>
+    </button>
+  </div>
+
+  <!-- Modal de boas-vindas -->
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
+  <div id="welcomeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-card">
+      <img class="modal-logo" src="img/Logo.png" alt="Logo" aria-hidden="true">
+      <h3 id="modalTitle" class="modal-title">Biscoitos Deliciosos</h3>
+      <p id="modalDesc" class="modal-sub">Selecione o produto que deseja e envie seu pedido</p>
+
+      <div class="modal-actions">
+        <a href="#produtos" class="modal-btn modal-btn-outline">Catálogo Online</a>
+        <a href="https://www.ifood.com.br" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-ifood">Pedir pelo iFood</a>
+      </div>
+
+      <button id="modalClose" class="modal-close" aria-label="Fechar">×</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
